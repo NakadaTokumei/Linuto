@@ -63,6 +63,10 @@ function build_kernel() {
     docker build . -t linuto --build-arg LINUX_VERSION=$1
 }
 
+function run_kernel() {
+    docker run -p 9898:9898 --privileged linuto
+}
+
 case $1 in
     "add_kernel")
         if [ $# -lt 2 ]; then
@@ -77,6 +81,9 @@ case $1 in
             error_exit "You don't give version"
         fi
         build_kernel $2
+        ;;
+    "run")
+        run_kernel
         ;;
     *)
         echo "Wrong Arguments"
