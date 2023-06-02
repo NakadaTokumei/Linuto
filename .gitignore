@@ -1,0 +1,6 @@
+app/
+image/
+linux/
+
+*.tar.xz
+*.tar.gz
