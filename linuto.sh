@@ -64,7 +64,8 @@ function build_kernel() {
 }
 
 function run_kernel() {
-    docker run -p 9898:9898 --privileged linuto
+    clear
+    docker run  -t -i -p 9898:9898 --privileged linuto
 }
 
 case $1 in
