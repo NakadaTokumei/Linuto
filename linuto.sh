@@ -68,6 +68,8 @@ function run_kernel() {
     docker run  -t -i -p 9898:9898 --privileged linuto
 }
 
+get_requirements
+
 case $1 in
     "add_kernel")
         if [ $# -lt 2 ]; then
