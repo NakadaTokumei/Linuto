@@ -10,12 +10,12 @@ function error_exit() {
 }
 
 # TODO
-function get_requirements() {
-    if [ ! -n ${which apt-get} ]; then
-        apt-get update
-        apt-get install -y bison flex build-essential libelf-dev
-    fi
-}
+# function get_requirements() {
+#     if [ ! -n ${which apt-get} ]; then
+#         apt-get update
+#         apt-get install -y bison flex build-essential libelf-dev
+#     fi
+# }
 
 function add_kernel() {
     if [ ! -d linux/ ]; then
@@ -68,7 +68,7 @@ function run_kernel() {
     docker run  -t -i -p 9898:9898 --privileged linuto
 }
 
-get_requirements
+# get_requirements
 
 case $1 in
     "add_kernel")
